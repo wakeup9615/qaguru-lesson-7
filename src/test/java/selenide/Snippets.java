@@ -15,7 +15,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class Snippets {
     //РАБОТА С БРАУЗЕРОМ
+
     void browser_command_examples() {
+
+        Configuration.holdBrowserOpen = true; //чтобы не закрывался браузер
 
         open("https://google.com");
         open("/customer/orders");    //относительный урл // -Dselenide.baseUrl=http://123.23.23.1

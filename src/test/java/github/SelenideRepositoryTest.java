@@ -18,6 +18,7 @@ public class SelenideRepositoryTest {
         $$("ul.repo-list li").first().$("a").click();
         //проверить что в загловке встречается selenide/selenide
         $("#repository-container-header").shouldHave(text("selenide / selenide"));
+        //sleep(5000);
     }
 
     //ARRANGE - предусловие

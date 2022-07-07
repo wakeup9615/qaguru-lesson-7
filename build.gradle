@@ -1,0 +1,32 @@
+plugins {
+    id 'java' //проект на джаве
+}
+
+repositories {
+    mavenCentral() //репозиторий всевозможных публичных библиотек на языке джава/котлин
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)  //фиксируем версию на языке 8
+    }
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    // Selenide
+    testImplementation('com.codeborne:selenide:6.6.3') // Implementation - используются в момент кода тестов
+    testRuntimeOnly("org.slf4j:slf4j-simple:1.7.32") //логирование Runtime - используется в момент запуска программ
+
+    // JUnit 5
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2") //для запуска
+
+}
+
+test {
+    useJUnitPlatform{}
+}
